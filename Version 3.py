@@ -69,10 +69,10 @@ def WAR(PlayerA, PlayerB):
 			AHand.append(PlayerA.pop())
 			BHand.append(PlayerB.pop())
 			
-		if gerRank(AHAnd[4]) > getRank(BHand[4]):
+		if getRank(AHand[4]) > getRank(BHand[4]):
 			PlayerA = AHand + BHand + PlayerA
-		elif getRank(AHand[4] < getRank(BHand[4])
-			PlayerB = AHand + BHand + PlayerB
+		elif getRank(AHand[4]) < getRank(BHand[4]):
+			PlayerA = AHand + BHand + PlayerB
 		else: 
 			PlayerA, PlayerB = Lose(PLayerA, PlayerB)
 	return PlayerA, PlayerB
