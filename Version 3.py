@@ -62,29 +62,23 @@ def playRound(PlayerA, PlayerB):
 def WAR(PlayerA, PlayerB):
 	# See the README.md file for instructions on coding 
 	# This module.
-	if len(PlayerA) > 3 and len(PlayerB) > 3:
-		ACard = PlayerA.pop()
-		ACardTwo = PlayerA.pop()
-		ACardThree = PlayerA.pop()
-		ACardFour = Player.pop()
-		BCard = PlayerB.pop()
-		BCardTwo = PlayerB.pop()
-		BCardThree = PlayerB.pop()
-		BCardFour = PlayerB.pop()
-		
-		AllCardsA = [ACard, ACardTwo, ACardThree, ACardFour]
-		AllCardsB = [BCard, BCardTwo, BCardThree, BCardFour]
-		
-		aRank = GetRank(ACardFour)
-		bRank = GetRank(BCardFour)
-		
-		if aRank > bRank:
-			PlayerA = AllCardsA + AllCardsB + PlayerA
-		elif bRank > aRank:
-			PlayerB = AllCardsA + AllCardsB + PlayerB
-		else:
-			pass
-
+	if len(PlayerA) > 5 and len(PlayerB) > 5:
+		AHand = [] 
+		BHand = []
+		for y in range(5):
+			AHand.append(PlayerA.pop())
+			BHand.append(PlayerB.pop())
+			
+		if gerRank(AHAnd[4]) > getRank(BHand[4]):
+			PlayerA = AHand + BHand + PlayerA
+		elif getRank(AHand[4] < getRank(BHand[4])
+			PlayerB = AHand + BHand + PlayerB
+		else: 
+			PlayerA, PlayerB = Lose(PLayerA, PlayerB)
+	return PlayerA, PlayerB
+	
+def Loser(PlayerA, PlayerB):
+	#lose cards
 	return PlayerA, PlayerB
 
 	
