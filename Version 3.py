@@ -62,24 +62,30 @@ def playRound(PlayerA, PlayerB):
 def WAR(PlayerA, PlayerB):
 	# See the README.md file for instructions on coding 
 	# This module.
-	aStack=[]
-	bStack=[]
-	for x in range(4):
-		aStack.append(PlayerA.pop())
-
-	for x in range (4):
-		bStack.append(PlayerB.pop())
+	if len(PlayerA) > 3 and len(PlayerB) > 3:
+		ACard = PlayerA.pop()
+		ACardTwo = PlayerA.pop()
+		ACardThree = PlayerA.pop()
+		ACardFour = Player.pop()
+		BCard = PlayerB.pop()
+		BCardTwo = PlayerB.pop()
+		BCardThree = PlayerB.pop()
+		BCardFour = PlayerB.pop()
 		
-	aStack[3]
-	bStack[3]
+		AllCardsA = [ACard, ACardTwo, ACardThree, ACardFour]
+		AllCardsB = [BCard, BCardTwo, BCardThree, BCardFour]
+		
+		aRank = GetRank(ACardFour)
+		bRank = GetRank(BCardFour)
+		
+		if aRank > bRank:
+			PlayerA = AllCardsA + AllCardsB + PlayerA
+		elif bRank > aRank:
+			PlayerB = AllCardsA + AllCardsB + PlayerB
+		else:
+			pass
 
-	if getRank(aStack[3]) > getRank(bStack[3]):
-		PlayerA=aStack+bStack+PlayerA
-
-	elif getRank(bStack[3]) > getRank(aStack[3]):
-		PlayerB=bStack+aStack+PlayerB
-
-		return PlayerA, PlayerB
+	return PlayerA, PlayerB
 
 	
 def getRank(anyCard):
